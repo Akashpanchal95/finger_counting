@@ -5,7 +5,7 @@ import mediapipe as mp
 from utils import HandDetector 
 
 
-cap = cv2.VideoCapture("https://192.168.1.106:8080/video")
+cap = cv2.VideoCapture(0)
 
 width = int(cap.get(3))
 height = int(cap.get(4))
@@ -17,7 +17,7 @@ print("Captured FPS: ", fps)
 
 # Create video writer object to write video
 fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-out = cv2.VideoWriter('/home/dev2/Documents/mediapipe_hand_detection/output.avi',fourcc, int(fps), (width,height))
+out = cv2.VideoWriter('output.avi',fourcc, int(fps), (width,height))
 
 start_time = 0#  time.time()
 
